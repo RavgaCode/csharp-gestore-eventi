@@ -20,7 +20,7 @@ public class ProgrammaEventi
         var listaFiltrata = new List<Evento>(); 
         foreach(Evento evento in this.Eventi)
         {
-            if(evento.Data == dataUtente)
+            if(evento.Data.CompareTo(dataUtente) == 0)
             {
                 listaFiltrata.Add(evento);  
             }
@@ -35,14 +35,12 @@ public class ProgrammaEventi
     {
         this.Eventi.Clear();
     }
-    public static string StampaListaEventi(List<Evento> eventi)
+    public  string StampaListaEventi()
     {
         string lista = "";
-        foreach (Evento evento in eventi)
+        foreach (Evento evento in this.Eventi)
         {
-            if (lista == "")
-                lista = evento.ToString() + "\n";
-            lista = lista + evento.ToString() + "\n";
+            lista += evento.MostraDataEvento() + "\n";
         }
         return lista;
     }
@@ -51,7 +49,7 @@ public class ProgrammaEventi
         string programma = Titolo;
         foreach (Evento evento in this.Eventi)
         {
-            programma = programma + "\t" + evento.ToString() + "\n";
+            programma = programma + "\n" + evento.MostraDataEvento() + "\n";
         }
         return programma;
     }
