@@ -92,7 +92,7 @@ public class Evento
     }
     public override string ToString()
     {
-        return this.Titolo + " - " + this.Data.ToString("dd/MM/yyyy");
+        return this.Titolo + " - " + this.Data.ToString("dd/MM/yyyy") + " - " + this.CapienzaMassima + " - " + this.PostiPrenotati;
     }
     public int PostiDisponibili()
     {
