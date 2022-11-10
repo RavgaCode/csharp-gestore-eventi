@@ -55,7 +55,7 @@ public class ProgrammaEventi
         string lista = "";
         foreach (Evento evento in this.Eventi)
         {
-            lista += evento.MostraDataEvento() + "\n";
+            lista += evento.ToString() + "\n";
         }
         return lista;
     }
@@ -64,7 +64,7 @@ public class ProgrammaEventi
         string programma = Titolo;
         foreach (Evento evento in this.Eventi)
         {
-            programma = programma + "\n" + evento.MostraDataEvento() + "\n";
+            programma = programma + "\n" + evento.ToString() + "\n";
         }
         return programma;
     }

@@ -90,7 +90,7 @@ public class Evento
             this.PostiPrenotati -= postiDaCancellare;
         }
     }
-    public string MostraDataEvento()
+    public override string ToString()
     {
         return this.Titolo + " - " + this.Data.ToString("dd/MM/yyyy");
     }
@@ -99,3 +99,4 @@ public class Evento
         return this.CapienzaMassima - this.PostiPrenotati;
     }
 }
+
