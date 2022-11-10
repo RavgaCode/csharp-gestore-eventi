@@ -3,7 +3,22 @@
 
 public class ProgrammaEventi
 {
-    public string Titolo { get; set; }
+    private string _titolo;
+    public string Titolo
+    {
+        get { return _titolo; }
+        set
+        {
+            if (value == "" || value == null)
+            {
+                throw new Exception("Formato titolo non valido");
+            }
+            else
+            {
+                _titolo = value;    
+            }
+        }
+    }
     public List<Evento> Eventi { get; set; }
 
     public ProgrammaEventi(string titolo)
